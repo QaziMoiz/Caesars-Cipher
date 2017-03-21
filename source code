@@ -1,0 +1,34 @@
+
+function rot13(str) { // LBH QVQ VG!
+  var uniCodeVals = [];
+  for(var i = 0; i < str.length; i++){
+    uniCodeVals.push(str.charCodeAt(i));
+  }//console.log(uniCodeVals);
+  for(var j = 0; j < uniCodeVals.length; j++){
+    if(uniCodeVals[j] <= 77){
+      //console.log(true);
+      uniCodeVals.splice(j, 1, uniCodeVals[j]+13);
+      //console.log(uniCodeVals);
+    }else{
+      //console.log(false);
+      uniCodeVals.splice(j, 1, uniCodeVals[j]-13);
+      //console.log(uniCodeVals);
+    }
+  }//return uniCodeVals;
+  var ccc = "";
+  for(var k = 0; k < uniCodeVals.length; k++){
+    ccc = ccc + String.fromCharCode(uniCodeVals[k]);
+    
+  }//return (ccc);
+  var ddd = ccc.replace('-',' ');
+  ddd = ddd.replace('.','!');
+  return (ddd);
+}
+
+// Change the inputs below to test
+rot13("SERR YBIR?");
+
+/*var val = 99;
+var uniCodeVals = [ 83, 69, 82, 82 ];
+uniCodeVals.splice(0, 1, val);
+console.log(uniCodeVals);*/
